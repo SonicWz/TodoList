@@ -1,6 +1,7 @@
 import {makeAutoObservable} from "mobx";
 import {todoAPI} from "../api/todoAPI.tsx";
 import {authAPI} from "../api/authAPI.tsx";
+import {getAllTodoTasksType} from "../api/todoAPI"
 
 export type InitialStateType = {
     id: number,

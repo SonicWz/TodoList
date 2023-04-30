@@ -59,7 +59,7 @@ const AddTaskInput: React.FC<AddTaskInputType> = ({task, addTask, isVisibleAddTa
                                 <h3>Добавить задачу</h3>
                                 <form className="addTaskPopupForm" onSubmit={ handleSubmit(onSubmit) }>
                                     <div className="fieldInputWrap">
-                                        <textarea type='text'
+                                        <textarea
                                                   rows="4"
                                                   cols="40"
                                                   className="fieldInput addTaskPopupForm__input"
