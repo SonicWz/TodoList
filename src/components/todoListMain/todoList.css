@@ -1,0 +1,67 @@
+.todoList {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 5px;
+  padding: 10px 20px;
+  width: 60%;
+  min-height: 30vw;
+}
+@media all and (max-width: 768px) {
+  .todoList {
+    width: 80%;
+  }
+}
+@media all and (max-width: 480px) {
+  .todoList {
+    width: 99%;
+    padding: 0;
+    align-items: flex-start;
+  }
+}
+
+@media all and (max-width: 480px) {
+  .todoList__title {
+    align-self: center;
+  }
+}
+
+.todoList__logOutBtn {
+  align-self: flex-end;
+}
+@media all and (max-width: 480px) {
+  .todoList__logOutBtn {
+    align-self: stretch;
+  }
+}
+
+.todoList__filter {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+@media all and (max-width: 768px) {
+  .todoList__filter {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    align-self: stretch;
+  }
+}
+@media all and (max-width: 480px) {
+  .todoList__filter {
+    align-items: stretch;
+  }
+}
+
+.tasksWrap {
+  width: 95%;
+}
+
+.filter__btn {
+  margin: 5px 5px;
+}
+
+/*# sourceMappingURL=todoList.css.map */

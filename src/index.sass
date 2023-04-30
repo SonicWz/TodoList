@@ -1,0 +1,81 @@
+$primary-color: #000
+
+
+html, body
+  margin: 0
+  padding: 0
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  min-width: 300px
+
+code
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace
+
+.container
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  min-height: 100vh
+  @media all and (max-width: 480px)
+    padding: 5px
+
+.App
+  color: $primary-color
+
+.btn
+  font-size: 1.05em
+  background: none
+  margin: 10px 5px
+  padding: 8px 20px
+  cursor: pointer
+  border: 1px solid hsla(0,0%,100%,.3)
+  border-radius: 6px
+  box-shadow: 0 5px 20px rgba(0,0,0,.1), 0 10px 10px rgba(0,0,0,.1)
+  color: #000
+  transition: all .3s
+  &:hover
+    background: #000
+    color: #fff
+
+.fieldInputWrap
+  position: relative
+
+.fieldInput
+  background-color: #fff
+  background-image: none
+  border: 1px solid #d9d9d9
+  border-radius: 5px
+  box-shadow: 0 5px 20px rgba(0,0,0,.1), 0 1px 1px rgba(0,0,0,.1)
+  box-sizing: border-box
+  color: rgba(0,0,0,.88)
+  display: inline-block
+  font-size: 14px
+  line-height: 1.5
+  list-style: none
+  margin: 10px 0
+  min-width: 0
+  padding: 4px 11px
+  transition: all .2s
+
+.control
+  margin: 0 2px
+  padding: 3px
+  display: inline-block
+  flex-grow: 0
+  cursor: pointer
+  transition: all 0.3s ease
+  &:hover
+    transform: scale(1.15)
+    transition: all 0.5s ease
+
+.formAttention
+  background: rgba(0,0,0,.8)
+  border-radius: 5px
+  box-shadow: 1px 1px 10px rgba(0,0,0,.5)
+  color: #fff
+  left: 28px
+  padding: 5px 10px
+  position: absolute
+  top: -40px
