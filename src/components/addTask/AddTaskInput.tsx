@@ -39,8 +39,6 @@ const AddTaskInput: React.FC<AddTaskInputType> = ({task, addTask, isVisibleAddTa
     }
     const getAddTaskPopup = () => {
         setAddTaskPopupIsVisible(true);
-        //@ts-ignore
-        setFocus('newTaskText');
     }
     const closeAddTaskPopup = () => {
         setAddTaskPopupIsVisible(false)
@@ -48,7 +46,7 @@ const AddTaskInput: React.FC<AddTaskInputType> = ({task, addTask, isVisibleAddTa
 
     useEffect(() => {
         if (isVisibleAddTaskPopup){
-            setFocus('newTaskText');
+            setFocus("newTaskText");
         }
     }, [isVisibleAddTaskPopup])
     return(
@@ -66,7 +64,7 @@ const AddTaskInput: React.FC<AddTaskInputType> = ({task, addTask, isVisibleAddTa
                                                   cols="40"
                                                   className="fieldInput addTaskPopupForm__input"
                                                   placeholder="Текст новой задачи"
-                                                  {...register('newTaskText', {
+                                                  {...register("newTaskText", {
                                                           required: true,
                                                           maxLength: 30
                                                       })
