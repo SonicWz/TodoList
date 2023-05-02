@@ -1,33 +1,34 @@
+import {observer} from 'mobx-react';
 import React, {useEffect} from 'react';
-import store, {InitialStateType} from "./mobx/store.tsx";
-import {observer} from 'mobx-react'
-import Login from "./components/login/loginPage.tsx";
+
 import {
     BrowserRouter,
     Route,
     Routes
 } from 'react-router-dom';
-import TodoList from "./components/todoListMain/TodoList.tsx";
 
+import Login from './components/login/loginPage.tsx';
+
+import TodoList from './components/todoListMain/TodoList.tsx';
+import store, {InitialStateType} from './mobx/store.tsx';
 
 const App: React.FC<InitialStateType> = () => {
     const isAuth = store.isAuth;
     const logIn = (formData) => {
         store.logIn(formData);
-    }
+    };
     const addTask = (newTaskText) => {
         store.addTask(newTaskText);
-    }
-
+    };
     useEffect(() => {
         store.init();
-    }, [])
+    }, []);
 
     useEffect(() => {
         if (isAuth){
             store.getAllTask();
         }
-    }, [isAuth])
+    }, [isAuth]);
 
     return (
         <BrowserRouter>
@@ -55,6 +56,6 @@ const App: React.FC<InitialStateType> = () => {
             </div>
         </BrowserRouter>
     );
-}
+};
 
 export default observer(App);
