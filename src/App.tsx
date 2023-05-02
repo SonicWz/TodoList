@@ -11,26 +11,26 @@ import TodoList from "./components/todoListMain/TodoList.tsx";
 
 
 const App: React.FC<InitialStateType> = () => {
-  const isAuth = store.isAuth;
-  const logIn = (formData) => {
-      store.logIn(formData);
-  }
-  const addTask = (newTaskText) => {
-      store.addTask(newTaskText);
-  }
+    const isAuth = store.isAuth;
+    const logIn = (formData) => {
+        store.logIn(formData);
+    }
+    const addTask = (newTaskText) => {
+        store.addTask(newTaskText);
+    }
 
     useEffect(() => {
         store.init();
     }, [])
 
-  useEffect(() => {
-      if (isAuth){
-          store.getAllTask();
-      }
-  }, [isAuth])
+    useEffect(() => {
+        if (isAuth){
+            store.getAllTask();
+        }
+    }, [isAuth])
 
-  return (
-      <BrowserRouter>
+    return (
+        <BrowserRouter>
             <div className="App">
                 <div className="container">
                     <Routes>
@@ -42,19 +42,19 @@ const App: React.FC<InitialStateType> = () => {
                         }
                         />
                         <Route path="/login" element={<Login
-                                logIn={logIn}
-                                isAuth={isAuth}
-                            />}
+                            logIn={logIn}
+                            isAuth={isAuth}
+                        />}
                         />
                         <Route path="/main" element={<TodoList
-                                addTask={addTask}
-                            />}
+                            addTask={addTask}
+                        />}
                         />
                     </Routes>
                 </div>
             </div>
-      </BrowserRouter>
-  );
+        </BrowserRouter>
+    );
 }
 
 export default observer(App);

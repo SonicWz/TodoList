@@ -1,20 +1,19 @@
-import React from "react";
-import DoneBtn from "../doneBtn/doneBtn.tsx";
-import DeleteBtn from "../deleteBtn/deleteBtn.tsx";
+import React from 'react';
+
+import {TaskType} from '../../mobx/store';
+import DeleteBtn from '../deleteBtn/deleteBtn.tsx';
+import DoneBtn from '../doneBtn/doneBtn.tsx';
 import './task.sass';
-import {TaskType} from "../../mobx/store";
 
 type TaskFCType = {
     task: TaskType,
-    setTaskIsDone: Function,
-    setTaskIsUndone: Function,
-    deleteTask: Function,
-    addTask: Function,
+    setTaskIsDone: () => void,
+    setTaskIsUndone: () => void,
+    deleteTask: () => void
 }
 
-const Task: React.FC<TaskFCType> = ({task, setTaskIsDone, setTaskIsUndone, deleteTask, addTask, ...props}) => {
-    let isDoneClass = 'task ' + (task.done?  ' task_done' : '');
-
+const Task: React.FC<TaskFCType> = ({task, setTaskIsDone, setTaskIsUndone, deleteTask, ...props}) => {
+    const isDoneClass = 'task ' + (task.done?  ' task_done' : '');
     return(
         <div className={isDoneClass}>
             <div className="taskField">{task.text}</div>
@@ -28,7 +27,7 @@ const Task: React.FC<TaskFCType> = ({task, setTaskIsDone, setTaskIsUndone, delet
                 deleteTask={deleteTask}
             />
         </div>
-    )
-}
+    );
+};
 
 export default Task;
