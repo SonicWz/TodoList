@@ -76,7 +76,7 @@ class Store {
             this.setIsAuth(response.data, false);
         }
     }
-    async getAllTask(params?: getAllTodoTasksType){
+    async getAllTask(params?: string){
         const updatedTasks = await todoAPI.getAllTodoTasks(params);
         this.setTask(updatedTasks);
     }
@@ -91,7 +91,6 @@ class Store {
             this.getAllTask();
             this.setIsVisibleAddTaskPopup(false);
         }
-
     }
     async setTaskIsDone(id: number, isDone: boolean){
         const index = this.tasks.map((task) => task.id).indexOf(id);
@@ -101,14 +100,12 @@ class Store {
             'done': isDone,
             'text': updatedTasks[index].text
         };
-
         const response = await todoAPI.updateTask(id, updatedTask);
         if (response.status === 200) {
             updatedTasks[index].done = isDone;
             this.setTask(updatedTasks);
         }
     }
-
     async deleteTask(id: number) {
         await todoAPI.deleteTask(id);
         this.getAllTask();

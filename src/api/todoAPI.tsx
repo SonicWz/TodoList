@@ -7,7 +7,7 @@ export type getAllTodoTasksType = {
 }
 
 export const todoAPI = {
-    getAllTodoTasks(params: getAllTodoTasksType) {
+    getAllTodoTasks(params: string) {
         let path = '';
         if (params === undefined){
             path = 'tasks/';
